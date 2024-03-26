@@ -1,0 +1,358 @@
+@keyframes Gradient { 0% { background-position: 150% 0}
+50% { background-position: 150% 0; }
+
+100% { background-position: 100% 0; } 
+}
+
+
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+
+/* ----------------base----------------- */
+@layer base {
+    .container {
+        @apply max-w-[90rem] px-[10px]  w-full mx-auto;
+      }
+    
+      body {
+        font-family: Noto Sans, serif
+      }
+      
+}
+
+
+
+  /* ----------------components----------------- */
+@layer components{
+ .header__wrapper .header__fLayer{
+    @apply flex flex-row md:justify-around justify-between bg-light py-5 px-5
+}
+.header__fLayer .header__logo img{
+    @apply  min-w-[50%] max-w-[100%] mx-5
+}
+/* header__nav desktop */
+.header__nav{
+    @apply hidden md:flex text-lg p-3 pr-9
+}
+.header__nav .header__clickables{
+    @apply hidden md:flex md:flex-row md:gap-5 items-center text-center justify-evenly text-[#7c3358]
+}
+.header__nav .header__clickables li{
+    @apply border-b-2 border-transparent hover:border-secondary transition-all duration-150
+}
+
+
+
+.header__cList{
+    @apply hidden md:flex md:flex-row md:gap-5 md:justify-between  text-center items-center;
+}
+
+/* header open mobile*/
+.header__action{ 
+    @apply bg-[light] md:hidden absolute  left-[0]  top-[90px] w-[0] h-[100vh] px-0 pt-0 overflow-hidden shadow-md
+    md:static md:h-fit md:w-fit md:shadow-none z-50 transition-all duration-500;
+}
+.header__action.open{
+    @apply w-[100%] bg-[#e8e8e8] z-40 transition-all duration-500 text-[#7c3358]
+}
+.header__action .header__navm{
+    @apply   flex flex-col z-50 self-center  
+    md:hidden  ;
+}
+.header__action .header__navm li{
+   @apply h-[4rem] w-full  border-t-2 text-center flex justify-center uppercase border-gray-400  items-center hover:bg-secondary hover:text-light 
+}
+.header__action .header__navm li:last-child{
+    @apply border-b-2 border-gray-400
+}
+ .header__action .header__navm li a{
+    @apply font-light text-dark text-lg content-center 
+}
+.header__action .header__btn{
+    @apply pt-5 flex flex-col gap-3
+    md:flex md:flex-row-reverse
+}
+.header__action .header__btn a{
+    @apply gap-[1rem] items-center text-center hover:text-secondary   
+}
+
+.header__action .header__btn a:last-child{
+    @apply w-[7.5rem] flex font-medium p-0
+    hover:to-secondary
+}
+.header__action .header__btn a{
+    @apply text-center pb-2
+}
+/* burger menu */
+.burger__menu{
+ /* pl-[10rem] py-2 */
+    @apply md:hidden z-50  justify-end py-2
+}
+.burger__menu span{
+    @apply w-[3rem] h-[0.5rem] bg-secondary block rounded-full transition-all duration-500;
+}
+.burger__menu span:nth-child(2){
+    @apply my-[6px];
+}
+.burger__menu.open{
+    @apply animate-pulse my-2 transition-all duration-500
+}
+  .burger__menu.open span:first-child{
+    @apply  bg-secondary  transform  translate-y-[-1px] rotate-[45deg] transition-all duration-500 z-50 
+}
+.burger__menu.open span:nth-child(2){
+    @apply transition-all duration-500 hidden
+}
+.burger__menu.open span:last-child{
+    @apply  bg-secondary transform  translate-y-[-10px] rotate-[-45deg] transition-all duration-500 z-50 
+}
+ /* hero banner */
+    .hero{
+        @apply bg-[#f5f5f5] bg-headerBannerBg md:bg-contain md:py-[10vh] md:bg-left-top bg-[position:-10000000%_0%] bg-no-repeat  md:animate-gradient
+    }
+    .hero__wrapper{ 
+     @apply   md:flex md:flex-row md:justify-evenly md:gap-2  md:px-[4rem]
+    }
+    .hero .hero__content{ 
+     @apply flex flex-col gap-5 mx-auto px-5 md:px-0 md:w-[40rem] 
+    }
+    .hero .hero__wrapper h1 {
+        @apply text-3xl py-5
+    }
+    .hero .hero__wrapper h1 span{
+        @apply font-bold text-4xl
+    }
+    .hero .hero__wrapper p{
+        @apply text-lg font-light
+    }
+    .hero__wrapper img{
+        @apply md:h-[20rem] 
+    }
+    /* intro */
+    .intro__wrapper .intro__content a{
+        @apply mb-[5rem] md:mb-0
+    }
+    /* offer section */
+    .offer__content {
+        @apply md:flex md:flex-row flex md:gap-5 flex-col gap-10 justify-center pb-10 md:pb-5
+    }
+    .offer__content .offer__item{
+        @apply  hover:scale-[1.05] md:px-[2rem] md:border-r-2 border-gray-300 md:max-w-[25rem] py-5
+    }
+    .offer__content .offer__item:last-child{
+        @apply  hover:scale-[1.05] md:px-[2rem] md:border-r border-none
+    }
+    .offer__content .offer__item img{
+        @apply justify-center mx-auto
+    }
+    .offer__content .offer__item ul li{
+        @apply list-disc text-light text-lg
+    }
+    .offer__content .offer__item ul{
+        @apply pt-10 flex flex-col justify-center
+    }
+    /*reviews sections */
+    
+  /* ~~~~~~~~~~ TESTIMONIAL ~~~~~~~~~~ */
+
+  .slider-item {
+    @apply lg:grid lg:grid-cols-2 gap-5;
+  }
+
+  .slider-item img {
+    @apply mb-2 mx-auto w-[320px] h-[320px] object-cover rounded-[50%];
+  }
+
+  .slider-desc {
+    @apply z-[10] relative;
+  }
+  .slider-desc::before {
+    @apply content-quoteLeft w-[100px] top-0 left-0 absolute z-[-1];
+  }
+  .slider-desc::after {
+    @apply content-quoteRight w-[100px] bottom-0 right-0 absolute z-[-1];
+  }
+
+  .slider-person h4 {
+    @apply lg:mb-0;
+  }
+
+  .slider-grid {
+    @apply lg:grid lg:grid-cols-2;
+  }
+
+  .slider-desc {
+    @apply lg:flex lg:flex-col lg:justify-center;
+  }
+
+  .slider-desc h2 {
+    @apply lg:pb-0 lg:pt-0;
+  }
+
+
+   /* events */
+   .events{
+    @apply bg-light
+   }
+   .events__list{
+    @apply md:flex md:flex-row md:gap-10 md:justify-between
+   }
+    .event__card{
+        @apply flex flex-col gap-5 text-center bg-[#dddddd] pb-10 mb-10 shadow-lg
+    }
+    .event__card a{
+        @apply mx-auto
+    }
+    .event__card h4{
+        @apply text-xl font-semibold
+    }
+    .event__card p{
+        @apply md:px-[2.5rem] md:py-1
+    }
+ 
+    /* footer */
+    .footer{
+        @apply bg-[#6a103f]
+    }
+    .footer__wrapper{
+        @apply flex flex-col gap-5  justify-between py-10 md:flex md:flex-row md:gap-0 md:justify-evenly
+    }
+    .footer__id{
+        @apply text-center md:border-r md:border-dark md:pr-20
+    }
+    .footer__id img{
+        @apply mx-auto
+    }
+    .social__nav{
+        @apply flex flex-row justify-center gap-10 py-5
+    }
+    .social__nav li{
+        @apply text-light text-2xl
+    }
+    .footer__services{
+        @apply text-center text-light md:border-r md:border-dark md:pr-20
+    }
+    .footer__services .services li{
+        @apply text-base text-light
+    }
+    .footer__Contacts{
+        @apply text-center text-light md:border-r md:border-dark md:pr-20
+    }
+    .footer__Contacts .Contacts li{
+        @apply text-base text-light
+    }
+    .footer__Contacts .Contacts li i{
+        @apply px-2
+    }   
+
+
+    /* ----------------------second page----------------------*/
+    .aboutBanner{
+        @apply bg-[#f5f5f5] bg-headerBannerBg md:bg-contain md:py-[10vh] md:bg-left-top bg-[position:-10000000%_0%] bg-no-repeat  md:animate-gradient
+    }
+    .partner__item img{
+        @apply h-[15rem] mx-auto md:w-[20rem] w-[15rem]
+    }
+ 
+    .partner__item{
+        @apply h-[30rem] mx-auto md:w-[40rem]
+    }
+    .clients__container ul li:nth-child(7) img{
+        @apply h-[7.5rem] w-full
+    }
+    /* -----------team---------------- */
+    .people {
+        @apply relative 
+        left-[50%] 
+        translate-x-[-50%]
+        min-h-[420px]
+        max-w-[1070px];
+      }
+      
+      .team img {
+        @apply block grayscale transition-all duration-500;
+      }
+      
+      .people-info {
+        @apply text-center
+      
+        opacity-0
+        transition-all
+        duration-300
+        translate-y-[20px];
+      }
+      
+      .team:nth-child(1) .people-info {
+        @apply mr-[65px];
+      }
+      
+      .team:hover img {
+        @apply grayscale-0;
+      }
+      
+      .team:hover .people-info {
+        @apply opacity-100 translate-y-[0px];
+      }
+      
+      .team:first-child {
+        @apply absolute bottom-0 left-[56px] z-[2];
+      }
+      .team:nth-child(2) {
+        @apply absolute bottom-0 left-[126px] z-[1];
+      }
+      .team:nth-child(3) {
+        @apply absolute bottom-0 left-[322px] z-[2];
+      }
+      .team:nth-child(4) {
+        @apply absolute bottom-0 left-[418px] z-[3];
+      }
+      .team:nth-child(5) {
+        @apply absolute bottom-0 left-[565px] z-[2];
+      }
+      .team:nth-child(6) {
+        @apply absolute bottom-0 left-[700px] z-[1];
+      }
+      .team:nth-child(7) {
+        @apply absolute bottom-0 left-[714px] z-[1];
+      }
+      .team:last-child {
+        @apply absolute bottom-0 left-[825px] z-[1];
+      }
+ 
+    
+
+  
+}
+
+     
+
+
+    
+
+
+
+ 
+
+/* ----------------utilities----------------- */
+@layer utilities{
+    .btn{
+        @apply  py-[.5rem] text-center px-[1rem] justify-center inline-block w-[10rem] p-[1rem] rounded-xl border-transparent
+        border-[1px] text-base font-medium
+        hover:scale-[1.05] brightness-100
+    }
+    .btn.bg--secondary{
+        @apply font-medium bg-secondary text-light hover:bg-light hover:text-secondary border-2 border-secondary rounded-full py-4
+        
+    }
+    .btn.bg--transparent{
+        @apply font-medium bg-transparent text-dark uppercase flex mx-auto hover:bg-[#f0e7eb] hover:text-secondary border-2 border-secondary rounded-full py-4
+        
+    }
+    .btn.bg--transparent2{
+        @apply font-medium bg-transparent text-dark uppercase flex mx-auto hover:bg-[#f0e7eb] hover:text-secondary border-2 border-light rounded-full py-4
+        
+    }
+}
