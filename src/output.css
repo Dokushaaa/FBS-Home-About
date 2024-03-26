@@ -962,7 +962,7 @@ body {
 
 @media (min-width: 768px) {
   .hero__wrapper img {
-    height: 20rem
+    height: 30rem
   }
 }
 
@@ -1303,6 +1303,10 @@ body {
     background-position: left top;
     padding-top: 10vh;
     padding-bottom: 10vh
+  }
+
+  .aboutBanner .aboutBanner__img img {
+    height: 30rem
   }
 }
 

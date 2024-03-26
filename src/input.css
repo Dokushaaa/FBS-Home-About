@@ -129,7 +129,7 @@
         @apply text-lg font-light
     }
     .hero__wrapper img{
-        @apply md:h-[20rem] 
+        @apply md:h-[30rem] 
     }
     /* intro */
     .intro__wrapper .intro__content a{
@@ -252,6 +252,9 @@
     /* ----------------------second page----------------------*/
     .aboutBanner{
         @apply bg-[#f5f5f5] bg-headerBannerBg md:bg-contain md:py-[10vh] md:bg-left-top bg-[position:-10000000%_0%] bg-no-repeat  md:animate-gradient
+    }
+    .aboutBanner .aboutBanner__img img{
+        @apply md:h-[30rem]
     }
     .partner__item img{
         @apply h-[15rem] mx-auto md:w-[20rem] w-[15rem]
