@@ -13,7 +13,7 @@
     <link rel="icon" class="bg-secondary" href="./img/logo-fbs.png">
 </head>
 <body>
-    <header class="header">
+    <header class="header" id="header">
 
           <div class="header__wrapper">
             <div class="header__fLayer">
@@ -271,6 +271,11 @@
         </div>
     </div>
  </footer>
+ <div id="topbtn" class="topbtn">
+  <a href="#header">
+    <img src="./img/caret-up-solid.svg" alt="" />
+  </a>
+</div>
 
 
 
@@ -285,7 +290,9 @@
           container: '.tns',
           items: 1,
           slideBy: 'page',
-          autoplay: true
+          controls:false,
+          autoplay:true,
+          autoplayButtonOutput: false
         });
         </script>
 <!-- MESSENGER TEMPLATE VENDORnyaaa -->

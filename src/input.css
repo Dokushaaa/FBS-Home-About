@@ -20,6 +20,45 @@
       body {
         font-family: Noto Sans, serif
       }
+      .testimonial__wrapper .tns-outer {
+        @apply relative;
+      }
+    
+      .testimonial__wrapper .tns-nav {
+        @apply z-[999] absolute bottom-[-3rem] lg:bottom-0
+      left-[50%]
+      -translate-x-1/2
+      
+      md:-translate-y-[-150%]
+      -translate-y-1/2;
+      
+      }
+    
+      .testimonial__wrapper .tns-nav button {
+        @apply mx-[0.2rem]
+      w-[15px]
+      h-[15px]
+      rounded-full
+      border-none
+      bg-[#6a103f];
+      }
+    
+      .testimonial__wrapper button.tns-nav-active {
+        @apply bg-[#be2a76];
+      }
+    }
+    
+    @layer utilities {
+      .btn {
+        @apply inline-block
+          border-transparent
+          transition-all
+          duration-500;
+      }
+      .btn.bg--accent {
+        @apply bg-secondary
+          text-light;
+      }
       
 }
 
@@ -324,6 +363,15 @@
       .team:last-child {
         @apply absolute bottom-0 left-[825px] z-[1];
       }
+      .topbtn {
+        @apply fixed transition-all duration-300  bottom-[20px] right-[5%] z-50 text-center px-[15px] py-[5px] border-[1px] border-[#ddd] rounded-md bg-black/30;
+      }
+      
+      .topbtn img {
+        @apply w-[3.5rem] h-[3.5rem];
+      }
+      
+    
  
     
 
